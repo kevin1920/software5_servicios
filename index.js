@@ -11,8 +11,7 @@ app.use(cors())
 const vs = "/api/v1/"
 
 //importar las rutas con los endpoints especificos
-const rutasInscripciones = require('./routes/inscripciones')
-app.use(vs,rutasInscripciones)
+
 
 //puerto
 const port = process.env.PORT || 3000
