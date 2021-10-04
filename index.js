@@ -17,10 +17,16 @@ app.use(vs,rutasAlumnos)
 const rutasMatriculas = require('./routes/matriculas')
 app.use(vs,rutasMatriculas)
 
+const rutasInstrumentos = require('./routes/instrumentos')
+app.use(vs,rutasInstrumentos)
+
+const rutasProfesores = require('./routes/profesores')
+app.use(vs,rutasProfesores)
+
 //puerto
 const port = process.env.PORT || 3000
 
 //levantar el servidor para escuchar los puertos
 app.listen(port,() => {
-    console.log(`Escuchando api en http://localhost:${port}`)
+    console.log(`Escuchando api en http://localhost:${port}${vs}`)
 })
