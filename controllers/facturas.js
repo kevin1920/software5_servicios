@@ -1,0 +1,99 @@
+/**
+ * Validar que se llenen todos los campos en el registro de un curso
+ * @param {*} info 
+ */
+
+ let validarInformacion = info => {
+    if(!info.fecha || !info.valor || !info.cedulaEstudiante){
+        throw {
+            ok:false, 
+            mensaje:"Todos los campos son obligatorios"
+        };
+    }
+}
+
+let makeRandomId= (length) => {
+    let result = ''
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    for (let i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+   }
+   return result;
+}
+
+var listaFacturas = [];
+
+
+/**
+ * Metodo que inserta una factura en la estructura de datos 
+ * @param {*} info 
+ */
+ let registrarFactura = async info => {
+    let factura = {id : makeRandomId(3), fecha: info.fecha, valor:info.valor, cedulaEstudiante: info.cedulaEstudiante}
+    listaFacturas.push(curso)
+    return {'status': 'ok'}
+}
+
+/**
+ * Metodo que obtiene el historial de facturas que han ingresado
+ * @param {*} info 
+ */
+ let obtenerFacturas = async () => {
+    return listaFacturas;
+}
+
+/**
+ * Metodo que obtiene una Factura en especifico
+ * @param {*} info 
+ */
+ let obtenerFactura = async id => {
+     let bandera = false
+     let facturaAlumno = ''
+     listaFacturas.forEach(curso => {
+         if(id === curso.id){
+            bandera = true
+            facturaAlumno = curso
+         }
+     })
+     if(bandera){
+        return facturaAlumno;
+     }else{
+        return {'status': bandera}
+     }
+   
+}
+
+/**
+ * Metodo que actualiza un Curso en especifico
+ * @param {*} info 
+ */
+ let actualizarFactura = async (id, info) => {
+    let bandera = false
+    listaFacturas.forEach(factura => {
+        if(id == factura.id){
+            factura['fecha'] = info.fecha
+            factura['valor'] = info.valor
+            factura['cedulaEstudiante'] = info.cedulaEstudiante
+            bandera = true
+        }
+    })
+   return {'status': bandera};
+}
+
+/**
+ * Metodo que elimina un Curso en especifico
+ * @param {*} info 
+ */
+ let eliminarFactura= async (id) => {
+    let bandera = false
+    listaFacturas.forEach(curso => {
+        if(id == curso.id){
+            let i = listaFacturas.indexOf(factura)
+            listaFacturas.splice(i,1)
+            bandera = true
+        }
+    })
+   return {'status': bandera};
+}
+
+module.exports = {validarInformacion,registrarFactura,obtenerFacturas,obtenerFactura,actualizarFactura,eliminarFactura}

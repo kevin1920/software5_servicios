@@ -23,6 +23,12 @@ app.use(vs,rutasInstrumentos)
 const rutasProfesores = require('./routes/profesores')
 app.use(vs,rutasProfesores)
 
+const rutasFacturas = require('./routes/facturas')
+app.use(vs, rutasFacturas)
+
+const rutasCursos = require('./routes/cursos')
+app.use(vs, rutasCursos)
+
 //puerto
 const port = process.env.PORT || 3000
 
