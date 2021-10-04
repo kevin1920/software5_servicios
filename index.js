@@ -11,7 +11,11 @@ app.use(cors())
 const vs = "/api/v1/"
 
 //importar las rutas con los endpoints especificos
+const rutasAlumnos = require('./routes/alumnos')
+app.use(vs,rutasAlumnos)
 
+const rutasMatriculas = require('./routes/matriculas')
+app.use(vs,rutasMatriculas)
 
 //puerto
 const port = process.env.PORT || 3000
