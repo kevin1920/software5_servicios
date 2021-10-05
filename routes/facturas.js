@@ -25,7 +25,7 @@ router.post('/facturas',(req,res) => {
  * Endpoint que traer una facturas
  */
 router.get('/facturas/:id',(req,res) => {
-    obtenerFacturas(req.params.id).then(respuesta => {
+    obtenerFactura(req.params.id).then(respuesta => {
         res.send(respuesta)
     }).catch(error => {
         console.log(error)
@@ -53,7 +53,7 @@ router.get('/facturas',(req,res) => {
 router.put('/facturas/:id',(req,res) => {
     try {
         validarInformacion(req.body)
-        actualizarFacturas(req.params.id, req.body).then(respuesta => {
+        actualizarFactura(req.params.id, req.body).then(respuesta => {
             res.status(200).send(respuesta)
         }).catch(error => {
             console.log(error)

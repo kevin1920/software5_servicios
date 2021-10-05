@@ -29,7 +29,7 @@ var listaCursos = [];
  * @param {*} info 
  */
  let registrarCurso = async info => {
-    let curso = {id : makeRandomId(3), nombre: info.nombre, horario:info.horario, instrumento: info.instrumento, profesor: info.instrumento, listaAlumnos: info.listaAlumnos}
+    let curso = {id : makeRandomId(3), nombre: info.nombre, horario:info.horario, instrumento: info.instrumento, cedulaprofesor: info.cedulaprofesor, listaAlumnos: info.listaAlumnos}
     listaCursos.push(curso)
     return {'status': 'ok'}
 }
@@ -73,6 +73,8 @@ var listaCursos = [];
         if(id == curso.id){
             curso['nombre'] = info.nombre
             curso['horario'] = info.horario
+            curso['cedulaprofesor'] = info.cedulaprofesor
+            curso['instrumento'] = info.instrumento
             bandera = true
         }
     })

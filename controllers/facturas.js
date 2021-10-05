@@ -1,5 +1,5 @@
 /**
- * Validar que se llenen todos los campos en el registro de un curso
+ * Validar que se llenen todos los campos en el registro de una factura
  * @param {*} info 
  */
 
@@ -30,7 +30,7 @@ var listaFacturas = [];
  */
  let registrarFactura = async info => {
     let factura = {id : makeRandomId(3), fecha: info.fecha, valor:info.valor, cedulaEstudiante: info.cedulaEstudiante}
-    listaFacturas.push(curso)
+    listaFacturas.push(factura)
     return {'status': 'ok'}
 }
 
@@ -49,10 +49,10 @@ var listaFacturas = [];
  let obtenerFactura = async id => {
      let bandera = false
      let facturaAlumno = ''
-     listaFacturas.forEach(curso => {
-         if(id === curso.id){
+     listaFacturas.forEach(factura => {
+         if(id === factura.id){
             bandera = true
-            facturaAlumno = curso
+            facturaAlumno = factura
          }
      })
      if(bandera){
@@ -64,7 +64,7 @@ var listaFacturas = [];
 }
 
 /**
- * Metodo que actualiza un Curso en especifico
+ * Metodo que actualiza una factura en especifico
  * @param {*} info 
  */
  let actualizarFactura = async (id, info) => {
@@ -81,13 +81,13 @@ var listaFacturas = [];
 }
 
 /**
- * Metodo que elimina un Curso en especifico
+ * Metodo que elimina una factura en especifico
  * @param {*} info 
  */
  let eliminarFactura= async (id) => {
     let bandera = false
-    listaFacturas.forEach(curso => {
-        if(id == curso.id){
+    listaFacturas.forEach(factura => {
+        if(id == factura.id){
             let i = listaFacturas.indexOf(factura)
             listaFacturas.splice(i,1)
             bandera = true
