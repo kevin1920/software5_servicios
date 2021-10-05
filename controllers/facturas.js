@@ -36,7 +36,6 @@ var listaFacturas = [];
 
 /**
  * Metodo que obtiene el historial de facturas que han ingresado
- * @param {*} info 
  */
  let obtenerFacturas = async () => {
     return listaFacturas;
@@ -44,7 +43,7 @@ var listaFacturas = [];
 
 /**
  * Metodo que obtiene una Factura en especifico
- * @param {*} info 
+ * @param {*} id 
  */
  let obtenerFactura = async id => {
      let bandera = false
@@ -66,6 +65,7 @@ var listaFacturas = [];
 /**
  * Metodo que actualiza una factura en especifico
  * @param {*} info 
+ * @param {*} id
  */
  let actualizarFactura = async (id, info) => {
     let bandera = false
@@ -82,7 +82,7 @@ var listaFacturas = [];
 
 /**
  * Metodo que elimina una factura en especifico
- * @param {*} info 
+ * @param {*} id
  */
  let eliminarFactura= async (id) => {
     let bandera = false

@@ -36,7 +36,6 @@ var listaCursos = [];
 
 /**
  * Metodo que obtiene el historial de cursos que han ingresado
- * @param {*} info 
  */
  let obtenerCursos = async () => {
     return listaCursos;
@@ -44,7 +43,7 @@ var listaCursos = [];
 
 /**
  * Metodo que obtiene un Curso en especifico
- * @param {*} info 
+ * @param {*} id
  */
  let obtenerCurso = async id => {
      let bandera = false
@@ -66,6 +65,7 @@ var listaCursos = [];
 /**
  * Metodo que actualiza un Curso en especifico
  * @param {*} info 
+ * @param {*} id
  */
  let actualizarCurso = async (id, info) => {
     let bandera = false
@@ -83,7 +83,7 @@ var listaCursos = [];
 
 /**
  * Metodo que elimina un Curso en especifico
- * @param {*} info 
+ * @param {*} id
  */
  let eliminarCurso = async (id) => {
     let bandera = false
@@ -97,7 +97,12 @@ var listaCursos = [];
    return {'status': bandera};
 }
 
-
+/**
+ * Metodo que asocia un curso a un profesor
+ * @param {*} id 
+ * @param {*} info 
+ * @returns 
+ */
 let profesorCurso = async (id, info) => {
     let bandera = false
     listaCursos.forEach(curso => {

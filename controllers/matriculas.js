@@ -41,7 +41,6 @@ var listaMatriculas = [];
 
 /**
  * Metodo que obtiene el historial de matriculas que han ingresado
- * 
  */
  let obtenerMatriculas = async () => {
     return listaMatriculas;

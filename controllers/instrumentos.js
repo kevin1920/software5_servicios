@@ -36,7 +36,6 @@ var listaInstrumentos = [];
 
 /**
  * Metodo que obtiene el historial de instrumentos que han ingresado
- * @param {*} info 
  */
  let obtenerInstrumentos = async () => {
     return listaInstrumentos;
@@ -44,7 +43,7 @@ var listaInstrumentos = [];
 
 /**
  * Metodo que obtiene un instrumento en especifico
- * @param {*} info 
+ * @param {*} id 
  */
  let obtenerInstrumento = async id => {
      let bandera = false
@@ -65,7 +64,8 @@ var listaInstrumentos = [];
 
 /**
  * Metodo que actualiza un instrumento en especifico
- * @param {*} info 
+ * @param {*} info
+ * @param {*} id
  */
  let actualizarInstrumento = async (id, info) => {
     let bandera = false
@@ -85,7 +85,7 @@ var listaInstrumentos = [];
 
 /**
  * Metodo que elimina un instrumento en especifico
- * @param {*} info 
+ * @param {*} id 
  */
  let eliminarInstrumento = async (id) => {
     let bandera = false

@@ -28,7 +28,6 @@ var listaEstudiantes = [];
 
 /**
  * Metodo que obtiene el historial de alumnos que han ingresado
- * @param {*} info 
  */
  let obtenerAlumnos = async () => {
      console.log(listaEstudiantes)
@@ -37,7 +36,7 @@ var listaEstudiantes = [];
 
 /**
  * Metodo que obtiene un alumno en especifico
- * @param {*} info 
+ * @param {*} id 
  */
  let obtenerAlumno = async id => {
      let bandera = false
@@ -58,7 +57,8 @@ var listaEstudiantes = [];
 
 /**
  * Metodo que actualiza un alumno en especifico
- * @param {*} info 
+ * @param {*} info
+ * @param {*} id
  */
  let actualizarAlumno = async (id, info) => {
     let bandera = false
@@ -77,7 +77,7 @@ var listaEstudiantes = [];
 
 /**
  * Metodo que elimina un alumno en especifico
- * @param {*} info 
+ * @param {*} id 
  */
  let eliminarAlumno = async (id) => {
     let bandera = false
