@@ -26,10 +26,10 @@ router.post('/facturas',(req,res) => {
  */
 router.get('/facturas/:id',(req,res) => {
     obtenerFactura(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -39,10 +39,10 @@ router.get('/facturas/:id',(req,res) => {
  */
 router.get('/facturas',(req,res) => {
     obtenerFacturas().then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -71,10 +71,10 @@ router.put('/facturas/:id',(req,res) => {
  */
 router.delete('/facturas/:id',(req,res) => {
     eliminarFactura(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })

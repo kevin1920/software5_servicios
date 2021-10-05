@@ -26,10 +26,10 @@ router.post('/profesores',(req,res) => {
  */
 router.get('/profesores/:id',(req,res) => {
     obtenerProfesor(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -39,10 +39,10 @@ router.get('/profesores/:id',(req,res) => {
  */
 router.get('/profesores',(req,res) => {
     obtenerProfesores().then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -70,10 +70,10 @@ router.put('/profesores/:id',(req,res) => {
  */
 router.delete('/profesores/:id',(req,res) => {
     eliminarProfesor(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })

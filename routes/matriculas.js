@@ -26,10 +26,10 @@ router.post('/matriculas',(req,res) => {
  */
 router.get('/matriculas/:id',(req,res) => {
     obtenerMatricula(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -39,10 +39,10 @@ router.get('/matriculas/:id',(req,res) => {
  */
 router.get('/matriculas',(req,res) => {
     obtenerMatriculas().then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -71,10 +71,10 @@ router.put('/matriculas/:id',(req,res) => {
  */
 router.delete('/matriculas/:id',(req,res) => {
     eliminarMatricula(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })

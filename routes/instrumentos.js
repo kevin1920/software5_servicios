@@ -26,10 +26,10 @@ router.post('/instrumentos',(req,res) => {
  */
 router.get('/instrumentos/:id',(req,res) => {
     obtenerInstrumento(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -39,10 +39,10 @@ router.get('/instrumentos/:id',(req,res) => {
  */
 router.get('/instrumentos',(req,res) => {
     obtenerInstrumentos().then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -71,10 +71,10 @@ router.put('/instrumentos/:id',(req,res) => {
  */
 router.delete('/instrumentos/:id',(req,res) => {
     eliminarInstrumento(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })

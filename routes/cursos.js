@@ -26,10 +26,10 @@ router.post('/cursos',(req,res) => {
  */
 router.get('/cursos/:id',(req,res) => {
     obtenerCurso(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -39,10 +39,10 @@ router.get('/cursos/:id',(req,res) => {
  */
 router.get('/cursos',(req,res) => {
     obtenerCursos().then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
@@ -71,10 +71,10 @@ router.put('/cursos/:id',(req,res) => {
  */
 router.delete('/cursos/:id',(req,res) => {
     eliminarCurso(req.params.id).then(respuesta => {
-        res.send(respuesta)
+        res.status(200).send(respuesta)
     }).catch(error => {
         console.log(error)
-        res.send(error)
+        res.status(500).send(error)
     })
     
 })
