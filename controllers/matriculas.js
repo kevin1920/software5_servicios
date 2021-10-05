@@ -36,7 +36,7 @@ var listaMatriculas = [];
 
 /**
  * Metodo que obtiene el historial de matriculas que han ingresado
- * @param {*} info 
+ * 
  */
  let obtenerMatriculas = async () => {
     return listaMatriculas;
@@ -44,7 +44,7 @@ var listaMatriculas = [];
 
 /**
  * Metodo que obtiene una Matricula en especifico
- * @param {*} info 
+ * @param {*} id
  */
  let obtenerMatricula = async id => {
      let bandera = false
@@ -81,7 +81,7 @@ var listaMatriculas = [];
 
 /**
  * Metodo que elimina un Matricula en especifico
- * @param {*} info 
+ * @param {*} id
  */
  let eliminarMatricula = async (id) => {
     let bandera = false
@@ -97,7 +97,7 @@ var listaMatriculas = [];
 
 /**
  * Metodo que actualiza el estado de una Matricula en especifico
- * @param {*} info 
+ * @param {*} id
  */
  let estadoMatricula = async (id, info) => {
     let bandera = false
