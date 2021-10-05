@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {validarInformacion, registrarCurso, obtenerCurso, obtenerCursos, actualizarCurso, eliminarCurso} = require('../controllers/cursos')
+const {validarInformacion, registrarCurso, obtenerCurso, obtenerCursos, actualizarCurso, eliminarCurso,profesorCurso} = require('../controllers/cursos')
 
 /**
  * Endpoint que registra una factura
@@ -78,6 +78,21 @@ router.delete('/cursos/:id',(req,res) => {
     })
     
 })
+
+
+
+
+router.put('/profesorCurso/:id',(req,res) => {
+    
+    profesorCurso(req.params.id, req.body).then(respuesta => {
+        res.status(200).send(respuesta)
+    }).catch(error => {
+        console.log(error)
+        res.status(500).send(error);
+    })
+   
+})
+
 
 
 

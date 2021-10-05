@@ -97,4 +97,17 @@ var listaCursos = [];
    return {'status': bandera};
 }
 
-module.exports = {validarInformacion,registrarCurso,obtenerCursos,obtenerCurso,actualizarCurso,eliminarCurso}
+
+let profesorCurso = async (id, info) => {
+    let bandera = false
+    listaCursos.forEach(curso => {
+        if(id == curso.id){
+            curso['cedulaprofesor'] = info.cedulaprofesor
+            bandera = true
+        }
+    })
+   return {'status': bandera};
+}
+
+
+module.exports = {validarInformacion,registrarCurso,obtenerCursos,obtenerCurso,actualizarCurso,eliminarCurso,profesorCurso}
