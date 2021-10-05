@@ -12,6 +12,11 @@
     }
 }
 
+/**
+ * Metodo que crea un id aleatorio para las matriculas
+ * @param {*} length 
+ * @returns 
+ */
 let makeRandomId= (length) => {
     let result = ''
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
