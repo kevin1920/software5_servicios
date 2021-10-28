@@ -4,7 +4,7 @@
  */
 
  let validarInformacion = info => {
-    if(!info.nombre || !info.tipoIdentificacion || !info.numIdentificacion || !info.fechaNacimiento || !info.email || !info.telefono){
+    if(!info.nombre || !info.numIdentificacion || !info.fechaNacimiento || !info.email || !info.telefono){
         throw {
             ok:false, 
             mensaje:"Todos los campos son obligatorios"
@@ -20,7 +20,7 @@ var listaEstudiantes = [];
  * @param {*} info 
  */
  let registrarAlumno = async info => {
-    let alumno = {nombre : info.nombre, tipoIdentificacion: info.tipoIdentificacion, numIdentificacion: info.numIdentificacion, email: info.email, telefono: info.telefono, fechaNacimiento: info.fechaNacimiento}
+    let alumno = {nombre : info.nombre, numIdentificacion: info.numIdentificacion, email: info.email, telefono: info.telefono, fechaNacimiento: info.fechaNacimiento}
     listaEstudiantes.push(alumno)
     console.log(listaEstudiantes)
     return {'status': 'ok'}
@@ -65,7 +65,6 @@ var listaEstudiantes = [];
     listaEstudiantes.forEach(alumno => {
         if(id == alumno.numIdentificacion){
             alumno['nombre'] = info.nombre
-            alumno['tipoIdentificacion'] = info.tipoIdentificacion
             alumno['numIdentificacion'] = info.numIdentificacion
             alumno['email'] = info.email
             alumno['telefono'] = info.telefono
