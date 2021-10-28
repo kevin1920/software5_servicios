@@ -20,7 +20,7 @@ var listaEstudiantes = [];
  * @param {*} info 
  */
  let registrarAlumno = async info => {
-    let alumno = {nombre : info.nombre, tipoIdentificacion: info.tipoIdentificacion, numIdentificacion: info.numIdentificacion, email: info.email, telefono: info.telefono}
+    let alumno = {nombre : info.nombre, tipoIdentificacion: info.tipoIdentificacion, numIdentificacion: info.numIdentificacion, email: info.email, telefono: info.telefono, fechaNacimiento: info.fechaNacimiento}
     listaEstudiantes.push(alumno)
     console.log(listaEstudiantes)
     return {'status': 'ok'}
@@ -69,6 +69,7 @@ var listaEstudiantes = [];
             alumno['numIdentificacion'] = info.numIdentificacion
             alumno['email'] = info.email
             alumno['telefono'] = info.telefono
+            alumno['fechaNacimiento'] = info.fechaNacimiento
             bandera = true
         }
     })
